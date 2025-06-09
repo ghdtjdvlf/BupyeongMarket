@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>반응형 2개씩 배치 예제</title>
+  <style>
+    .main-tag-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -10px; /* 좌우 여백 보정 */
+    }
+
+    .col-md-3 {
+      width: 25%;
+      padding: 0 10px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    .main-tag {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .icon img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .col-md-3 {
+        width: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="main-tag-wrap">
+  <div class="col-md-3">
+    <div class="main-tag">
+      <div class="icon">
+        <img src="assets/images/icon/icon__meat.svg" alt="육류 아이콘">
+      </div>
+      <div class="name">
+        <h3>육류</h3>
+      </div>
+      <div class="dec">
+        <p>100% 국내산, 신선함 제대로!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="main-tag">
+      <div class="icon">
+        <img src="assets/images/icon/icon__meat.svg" alt="육류 아이콘">
+      </div>
+      <div class="name">
+        <h3>육류</h3>
+      </div>
+      <div class="dec">
+        <p>100% 국내산, 신선함 제대로!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="main-tag">
+      <div class="icon">
+        <img src="assets/images/icon/icon__meat.svg" alt="육류 아이콘">
+      </div>
+      <div class="name">
+        <h3>육류</h3>
+      </div>
+      <div class="dec">
+        <p>100% 국내산, 신선함 제대로!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="main-tag">
+      <div class="icon">
+        <img src="assets/images/icon/icon__meat.svg" alt="육류 아이콘">
+      </div>
+      <div class="name">
+        <h3>육류</h3>
+      </div>
+      <div class="dec">
+        <p>100% 국내산, 신선함 제대로!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

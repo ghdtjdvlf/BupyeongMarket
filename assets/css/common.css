@@ -1,39 +1,66 @@
-@import url('https://cdn.jsdelivr.net/gh/toss/tossface/dist/tossface.css');
-
-@font-face {
-  font-family: 'PretendardNumbers';
-  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard.css') format('woff2');
-  unicode-range: U+0030-0039; /* 숫자 범위: 0-9 */
-}
-
-body {
-  font-family: Tossface;
-}
-
-
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 :root {
+  --main-bg-color:#FAFAFA;
   --main-color:#82A90D;
   --sub-Color:#02A7D7;
   --sub-Color2:#29AE51;
   --sub-Color3:#1D51B8;
   --sub-Color4:#5D34EC;
-  --black-01:#17171B;
-  --black-02:#202632;
+  --Black-01:#17171B;
+  --Black-02:#202632;
   --Grey-01:#54575D;
   --Grey-02:#A1A1A1;
   --Grey-03:#E1E1E0;
+  --Grey-04:#F3F4F6;
   --White-01:#FFFFFF;
   --padding-sec: 80px 0;
 }
 
-.box {
-  width: 100px;
-  height: 100px;
-  padding: var(--padding-sec);
+* {
+  box-sizing: border-box;
+  word-break: keep-all;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: Pretendard ;
+  background: var(--main-bg-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  width: 100%;
 }
 
 
-h1 {
-  font-family: Tossface;
+
+/* margin */
+.mt-20 {
+  margin-top: 20px;
 }
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+.mb-50 {
+ margin-bottom: 50px;
+}
+
+.mb-45 {
+ margin-bottom: 45px;
+}
+
+
+

@@ -56,6 +56,9 @@ img {
   padding: 1.3rem;
   font-size: 2rem;
 }
+.section03 .text input::-moz-placeholder {
+  font-size: 2rem;
+}
 .section03 .text input::placeholder {
   font-size: 2rem;
 }
@@ -331,102 +334,4 @@ img {
 }
 .section03 .tag_wrapper .tag06:hover p {
   transform: translateX(2px);
-}
-
-.section04 {
-  padding: var(--padding-sec);
-}
-.section04 .col-md-12 {
-  text-align: center;
-  margin-bottom: 100px;
-}
-.section04 .col-md-12 h3 {
-  color: var(--black-01);
-  font-size: 6rem;
-  font-weight: 700;
-}
-.section04 .col-md-12 p {
-  color: var(--Grey-01);
-  font-size: 20px;
-  font-weight: 700;
-}
-.section04 .col-md-6 .text {
-  padding: 20px 0px 20px 0px;
-}
-.section04 .col-md-6 h4 {
-  color: var(--black-01);
-  font-size: 26px;
-  font-weight: 700;
-}
-.section04 .col-md-6 p {
-  color: var(--Grey-01);
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.section05 {
-  padding: var(--padding-sec);
-}
-.section05 .col-md-12 {
-  text-align: center;
-  margin-bottom: 100px;
-}
-.section05 .col-md-12 h3 {
-  color: var(--black-01);
-  font-size: 6rem;
-  font-weight: 700;
-}
-.section05 .col-md-12 p {
-  color: var(--Grey-01);
-  font-size: 20px;
-  font-weight: 700;
-}
-.section05 .col-md-6 .text {
-  padding: 20px 0px 20px 0px;
-}
-.section05 .col-md-6 h4 {
-  color: var(--black-01);
-  font-size: 26px;
-  font-weight: 700;
-}
-.section05 .col-md-6 p {
-  color: var(--Grey-01);
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.section06 {
-  padding: var(--padding-sec);
-}
-.section06 .title {
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
-  padding: 10px 22px;
-  margin-bottom: 22px;
-}
-.section06 .title h3 {
-  color: var(--black-01);
-  font-size: 30px;
-  font-weight: 700;
-}
-.section06 button {
-  align-self: center;
-  border: none;
-  background: none;
-  color: var(--black-01);
-  font-size: 18px;
-  font-weight: 700;
-}
-.section06 .post {
-  display: flex;
-  justify-content: space-between;
-}
-.section06 .post p {
-  color: var(--Grey-01);
-  font-size: 16px;
-  font-weight: 600;
-}
-.section06 .post .content {
-  border-bottom: 1px solid var(--black-01);
-}
+}/*# sourceMappingURL=style.css.map */
