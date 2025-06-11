@@ -56,6 +56,9 @@ img {
   padding: 1.3rem;
   font-size: 2rem;
 }
+.section03 .text input::-moz-placeholder {
+  font-size: 2rem;
+}
 .section03 .text input::placeholder {
   font-size: 2rem;
 }
@@ -402,11 +405,10 @@ img {
   justify-content: space-between;
   display: flex;
   align-items: center;
-  padding: 10px 22px;
   margin-bottom: 22px;
 }
 .section06 .title h3 {
-  color: var(--black-01);
+  color: var(--Black-01);
   font-size: 30px;
   font-weight: 700;
 }
@@ -418,15 +420,26 @@ img {
   font-size: 18px;
   font-weight: 700;
 }
-.section06 .post {
-  display: flex;
-  justify-content: space-between;
+.section06 .notice {
+  padding: 10px 20px;
 }
-.section06 .post p {
+.section06 .notice .content {
   color: var(--Grey-01);
-  font-size: 16px;
-  font-weight: 600;
+  display: flex;
+  margin-bottom: 4rem;
 }
-.section06 .post .content {
-  border-bottom: 1px solid var(--black-01);
+.section06 .notice .content .head {
+  border-bottom: 1px solid var(--Black-01);
+}
+.section06 .notice .content .head h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.section06 .notice .content .head:hover {
+  color: var(--Black-01);
+}
+.section06 .notice .content .date {
+  font-size: 1.4rem;
+  text-align: right;
+  font-weight: 500;
 }

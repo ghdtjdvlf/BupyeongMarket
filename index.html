@@ -171,38 +171,92 @@
                     <button>자세히보기 ></button>
                 </div>
                 <div class="col-md-6 title">
-                        <h3>오시는길</h3>
-                        <button>자세히보기 ></button>
+                    <h3>오시는길</h3>
+                    <button>자세히보기 ></button>
                 </div>
             </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="post d-flex">
-                            <p class="content">설·추석엔 잠깐 쉬어요! 시장 휴무랑 운영 시간 알려드려요</p>
-                            <p class="date">2024-12-23</p>
+            <div class="row">
+                <div class="col-md-6 notice">
+                    <a href="#">
+                        <div class="content">
+                            <div class="col-md-8 head">
+                                <h3>
+                                    설·추석엔 잠깐 쉬어요! 시장 휴무랑 운영 시간 알려드려요
+                                </h3>
+                            </div>
+                            <div class="col-md-4 date">
+                                <p>
+                                    2024-12-23
+                                </p>
+                            </div>
                         </div>
-                        <div class="post d-flex">
-                            <p class="content">설·추석엔 잠깐 쉬어요! 시장 휴무랑 운영 시간 알려드려요</p>
-                            <p class="date">2024-12-23</p>
+                    </a>
+                    <a href="#">
+                        <div class="content">
+                            <div class="col-md-8 head">
+                                <h3>
+                                    주차 걱정 끝! 주차장 이용 꿀팁과 요금 안내 드려요
+                                </h3>
+                            </div>
+                            <div class="col-md-4 date">
+                                <p>
+                                    2024-11-13
+                                </p>
+                            </div>
                         </div>
-                        <div class="post d-flex">
-                            <p class="content">설·추석엔 잠깐 쉬어요! 시장 휴무랑 운영 시간 알려드려요</p>
-                            <p class="date">2024-12-23</p>
+                    </a>
+                    <a href="#">
+                        <div class="content">
+                            <div class="col-md-8 head">
+                                <h3>
+                                    신나고 즐거운 시장 축제, 일정 미리 알려드릴게요
+                                </h3>
+                            </div>
+                            <div class="col-md-4 date">
+                                <p>
+                                    2024-10-11
+                                </p>
+                            </div>
                         </div>
-                        <div class="post">
-                            <p class="content">설·추석엔 잠깐 쉬어요! 시장 휴무랑 운영 시간 알려드려요</p>
-                            <p class="date">2024-12-23</p>
+                    </a>
+                    <a href="#">
+                        <div class="content">
+                            <div class="col-md-8 head">
+                                <h3>
+                                    우리 시장 새 친구 찾고 있어요! 상인 모집 소식
+                                </h3>
+                            </div>
+                            <div class="col-md-4 date">
+                                <p>
+                                    2024-07-25
+                                </p>
+                            </div>
                         </div>
-                        <div class="post">
-                            <p class="content">설·추석엔 잠깐 쉬어요! 시장 휴무랑 운영 시간 알려드려요</p>
-                            <p class="date">2024-12-23</p>
+                    </a>
+                    <a href="#">
+                        <div class="content">
+                            <div class="col-md-8 head">
+                                <h3>
+                                    시설 점검해요! 이용에 참고해 주세요~
+                                </h3>
+                            </div>
+                            <div class="col-md-4 date">
+                                <p>
+                                    2024-04-21
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="assets/images/map.png" alt="">
-                    </div>
+                    </a>
                 </div>
-            
+                <div class="col-md-6">
+                    <div id="map" style="width:100%;height:350px;"></div>
+                    <p>
+                        <button onclick="setCenter()">지도 중심좌표 이동시키기</button>
+                        <button onclick="panTo()">지도 중심좌표 부드럽게 이동시키기</button>
+                    </p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -235,6 +289,32 @@
     </footer>
     <!-- Bootstrap 5 -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=625d523b05271240eef452e833c69ccd"></script>
+    <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(37.495306, 126.726591), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        // 마커가 표시될 위치입니다 
+        var markerPosition = new kakao.maps.LatLng(37.495306, 126.726591);
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+
+        // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+        // marker.setMap(null);    
+    </script>
 </body>
 
 </html>
