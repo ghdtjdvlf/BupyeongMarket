@@ -401,11 +401,14 @@ img {
 .section06 {
   padding: var(--padding-sec);
 }
+.section06 .col-md-6 {
+  padding: 10px 30px;
+}
 .section06 .title {
   justify-content: space-between;
   display: flex;
   align-items: center;
-  margin-bottom: 22px;
+  margin-bottom: 30px;
 }
 .section06 .title h3 {
   color: var(--Black-01);
@@ -419,9 +422,6 @@ img {
   color: var(--black-01);
   font-size: 18px;
   font-weight: 700;
-}
-.section06 .notice {
-  padding: 10px 20px;
 }
 .section06 .notice .content {
   color: var(--Grey-01);
@@ -442,4 +442,7 @@ img {
   font-size: 1.4rem;
   text-align: right;
   font-weight: 500;
+}
+.section06 #map {
+  border-radius: 30px;
 }

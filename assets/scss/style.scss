@@ -452,11 +452,16 @@ padding: var(--padding-sec);
 .section06 {
   padding: var(--padding-sec);
 
+  .col-md-6 {
+    padding: 10px 30px;
+  }
+
+
   .title {
     justify-content: space-between;
     display: flex;
     align-items: center;
-    margin-bottom: 22px;
+    margin-bottom: 30px;
 
     h3 {
       color: var(--Black-01);
@@ -475,8 +480,6 @@ padding: var(--padding-sec);
   }
 
   .notice {
-    padding: 10px 20px;
-
     .content {
       color: var(--Grey-01);
       display: flex;
@@ -502,4 +505,10 @@ padding: var(--padding-sec);
       }
     }
   }
+
+    #map {
+    border-radius: 30px;
+  }
+
+
 }
