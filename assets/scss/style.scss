@@ -477,6 +477,10 @@ padding: var(--padding-sec);
     color: var(--black-01);
     font-size: 18px;
     font-weight: 700;
+      &:hover {
+        
+    text-decoration: underline;
+  }
   }
 
   .notice {

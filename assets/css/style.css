@@ -420,6 +420,9 @@ img {
   font-size: 18px;
   font-weight: 700;
 }
+.section06 button:hover {
+  text-decoration: underline;
+}
 .section06 .notice .content {
   color: var(--Grey-01);
   display: flex;
