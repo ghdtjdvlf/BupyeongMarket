@@ -56,9 +56,6 @@ img {
   padding: 1.3rem;
   font-size: 2rem;
 }
-.section03 .text input::-moz-placeholder {
-  font-size: 2rem;
-}
 .section03 .text input::placeholder {
   font-size: 2rem;
 }

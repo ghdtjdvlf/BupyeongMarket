@@ -3,10 +3,10 @@
 :root {
   --main-bg-color:#FAFAFA;
   --main-color:#82A90D;
-  --sub-Color:#02A7D7;
-  --sub-Color2:#29AE51;
-  --sub-Color3:#1D51B8;
-  --sub-Color4:#5D34EC;
+  --sub-Color-skyblue:#02A7D7;
+  --sub-Color2-green:#29AE51;
+  --sub-Color3-blue:#1D51B8;
+  --sub-Color4-purple:#5D34EC;
   --Black-01:#17171B;
   --Black-02:#202632;
   --Grey-01:#54575D;
@@ -15,6 +15,9 @@
   --Grey-04:#F3F4F6;
   --White-01:#FFFFFF;
   --padding-sec: 80px 0;
+  --Stroke-color:#EEEDF2;
+  --Hover-color:#F6FDFF;
+  
 }
 
 * {
@@ -37,11 +40,25 @@ a {
 
 p {
   margin: 0;
+  padding: 0;
 }
 
 img {
   width: 100%;
 }
+
+/* component */
+.maintop {
+  padding: var(--padding-sec);
+}
+.maintop .mainlogo_img {
+  margin: 0 auto;
+  width: 30%;
+}
+.maintop .mainlogo_img img {
+  width: 100%;
+}
+
 
 
 
