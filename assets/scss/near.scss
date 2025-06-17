@@ -7,17 +7,18 @@
    background-color: var(--main-bg-color); 
    .row{
     background: var(--White-01);
-    padding: 20px;
+    padding: 50px 0;
     border-radius: 18px;
+    border: 1px solid var(--Stroke-color);
    h1{
-    font: 2.4rem;
+    font-size: 2.4rem;
     color: var(--Black-01);
-    margin-top: 15px;
+    margin-bottom: 0;
+    font-weight: 700;
    }
    p{
     font-size: 1.8rem;
     color: var(--Grey-01);
-    margin-top: 10px;
    }
 }
 }
@@ -43,30 +44,32 @@
         display: flex;
         position: relative; /* 바로가기 버튼 위치 지정을 위해 추가 */
     }
+    .attraction_div .attraction-card+.attraction-card{
+    margin: 40px 0;
+}
     .attraction-card.show {
             opacity: 1;
             transform: translateY(0);
+            padding: 30px 20px;
         }
-}
-.attraction-card:hover {
-            transform: translateY(-10px) !important;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }        
-        
-        
-        
-        .attraction-image {
-            width: 30%;
-            height: 200px;
+         .attraction-image {
+            width: 26%;
             overflow: hidden;
-        }
-        
-        .attraction-image img {
+            
+            img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
+        }
+}
+    .attraction-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }        
+        
+        .attraction-image 
         
         .attraction-card:hover .attraction-image img {
             transform: scale(1.05);
@@ -79,38 +82,32 @@
         }
         
         .attraction-info h2 {
-            font-size: 1.5rem;
-            color: #2c3e50;
+            font-size: 2.4rem;
+            color: var(--Black-01);
             margin-bottom: 15px;
             padding-bottom: 10px;
             border-bottom: 1px solid #eee;
         }
         
         .attraction-info p {
-            color: #7f8c8d;
-            margin-bottom: 15px;
+            color: var(--Grey-01);
+            margin-bottom: 1.8rem;
         }
         
         .attraction-details {
-            margin-top: 20px;
+            margin-top: 34px;
         }
         
         .detail-item {
             display: flex;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             align-items: flex-start;
-        }
-        
-        .detail-item i {
-            color: #3498db;
-            margin-right: 10px;
-            margin-top: 3px;
-        }
-        
-        .detail-item a {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s;
+                        p{
+                margin: 0;
+            }
+            a{
+                color: var(--Grey-01);
+            }
         }
         
         .detail-item a:hover {
@@ -118,17 +115,16 @@
             text-decoration: underline;
         }
 
-        /* 바로가기 버튼 스타일 - 세로 가운데 정렬 */
         .go-to-button {
             position: absolute;
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
-            background-color: #3498db;
-            color: white;
-            border: none;
+            background: none;
+            color: var();
+            border: var();
             padding: 10px 20px;
-            border-radius: 25px;
+            border-radius: 15px;
             cursor: pointer;
             font-size: 0.9rem;
             transition: all 0.3s ease;
@@ -136,6 +132,7 @@
             align-items: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             z-index: 1;
+            padding: 20px 30px;
         }
 
         .go-to-button i {
