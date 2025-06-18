@@ -1,0 +1,83 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* 메가메뉴 스타일 */
+.mega-menu {
+    background: #333;
+    position: relative;
+}
+
+.main-menu {
+    display: flex;
+    list-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.menu-item a:hover {
+    background: #555;
+}
+
+/* 서브메뉴 스타일 */
+.submenu {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: none;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.has-submenu:hover .submenu {
+    display: flex;
+}
+
+.submenu-column {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.submenu h3 {
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.submenu ul {
+    list-style: none;
+}
+
+.submenu li a {
+    color: #555;
+    padding: 8px 0;
+    display: block;
+}
+
+.submenu li a:hover {
+    color: #0066cc;
+    background: transparent;
+}

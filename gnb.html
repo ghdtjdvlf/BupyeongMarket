@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/css/common.css">
+
+
+  <style>
+
+
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    ul,li{
+      list-style: none;
+    
+    }
+
+    header {
+      height: 80px;
+    }
+
+
+    .gnb {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .menu{
+      display: flex;
+      gap: 20px;
+     height: 0;
+     font-size: 1.8rem;
+    }
+
+    .sub-menu {
+      margin-top: 30px;
+  opacity: 0;
+
+  font-size: 1.6rem;
+  transition: all .4s ease;
+  margin-top: 0;
+    }
+    .sub-menu.on {
+       display: block; /* 필요 시 유지 */
+  max-height: 500px; /* 충분히 큰 값 설정 */
+  opacity: 1;
+  margin-top: 10px; /* 조금 띄우는 효과 */
+    }
+
+    .m-1 {
+      width: 150px;
+    }
+    .m-2 {
+      width: 180px;
+    }
+    .m-3 {
+      width: 100px;
+    }
+    .m-4 {
+      width: 180px;
+    }
+    .m-5 {
+      width: 180px;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  
+  <header>
+
+    <div class="gnb">
+
+
+      <div class="logo">
+        <img src="assets/images/component/mainlogo.png" alt="">
+      </div>
+ <ul class="menu">
+  <li class="m-1">
+    <a href="#">부평문화시장</a>
+    <ul class="sub-menu">
+      <li><a href="#">시장소개</a></li>
+      <li><a href="#">BI소개</a></li>
+      <li><a href="#">오시는 길</a></li>
+    </ul>
+  </li>
+  <li class="m-2">
+    <a href="#">살거리</a>
+    <ul class="sub-menu">
+      <li><a href="#">의류·패션잡화</a></li>
+      <li><a href="#">액세서리·기타</a></li>
+      <li><a href="#">아동복</a></li>
+      <li><a href="#">훈수·주방·그릇</a></li>
+      <li><a href="#">수입품·식품·문구</a></li>
+      <li><a href="#">농·수산물·인삼</a></li>
+      <li><a href="#">꽃·공예품</a></li>
+    </ul>
+  </li>
+  <li class="m-3">
+    <a href="#">시장안내</a>
+    <ul class="sub-menu">
+      <li><a href="#">편의시설</a></li>
+      <li><a href="#">시장점포</a></li>
+      <li><a href="#">시장지도</a></li>
+    </ul>
+  </li>
+  <li class="m-4">
+    <a href="#">문화광장</a>
+    <ul class="sub-menu">
+      <li><a href="#">행사·이벤트</a></li>
+      <li><a href="#">문화교실</a></li>
+      <li><a href="#">행사·이벤트</a></li>
+    </ul>
+  </li>
+  <li class="m-5">
+    <a href="#">커뮤니티</a>
+    <ul class="sub-menu">
+      <li><a href="#">시장 SNS</a></li>
+      <li><a href="#">공지사항</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+  </li>
+</ul>
+
+      <div class="util">
+        <div class="language">
+          <input type="">
+        </div>
+      </div>
+
+    </div>
+
+
+  </header>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script>
+
+const menu = document.querySelector('.menu');
+const subMenus = document.querySelectorAll('ul.sub-menu');
+
+menu.addEventListener('mouseenter', () => {
+  subMenus.forEach(subMenu => {
+    subMenu.classList.add('on');
+  });
+});
+
+menu.addEventListener('mouseleave', () => {
+  subMenus.forEach(subMenu => {
+    subMenu.classList.remove('on');
+  });
+});
+
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+@import"/assets/css/common.css";header{padding:0 80px;height:80px}header a{color:inherit;text-decoration:none}header ul{display:flex;justify-content:space-between;align-items:center;list-style:none;padding:0}header ul li{display:flex;flex-direction:column;gap:80px;color:var(--Black-01);font-weight:500;font-size:1.8rem}header ul li .sub-menu{display:flex;flex-direction:column}
