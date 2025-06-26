@@ -1,4 +1,3 @@
-@import 'common.css';
 @import url('/assets/css/common.css');
 
 img {
@@ -7,27 +6,60 @@ img {
 
 // section01 섹션1
 .section01 {
-    background: url('../images/sec01_01.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-    padding: var(--padding-sec);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-
+    position: relative;
+    
     h2 {
         color: var(--White-01);
         font-size: 10rem;
+    }
+    
+    .video-background {
+        width: 100%;
+        height: 1000px;
+        position: relative;
+        
+        video {
+width: 100%;
+    height: 84%;
+    object-fit: cover;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: multiply;
+    z-index: 0;
+        }
+        
+        .video-dim {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    }
+
+    .content {
+        width: 700px;
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: var(--White-01);
+
     }
 }
 
 // section02 섹션2
 .section02 {
     padding: var(--padding-sec);
-
+    .d-grid {
+    grid-template-columns:repeat(4, 1fr)
+    }
     .title {
         h3 {
             color: var(--black-01);
@@ -36,9 +68,51 @@ img {
             text-align: center;
         }
     }
+    .card{
+        border-radius: 50px;
+    }
+    .item-card {
+        position: relative;
+        &:hover {
+           .overlay {
+            opacity: 1;
+           } 
+        }
+        .overlay {
+            background-color: var(--sub-Color4-purple);
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 40px 40px 0 40px;
+            transition: all .3s;
+            p {
+                color: var(--White-01);
+                font-size: 3rem;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+            .overlay-next{
+                padding: 8px 40px;
+                background: var(--White-01);
+                border-radius: 30px;
+            }
+            a {
+                
+            }
 
+        }
+
+    }
     img {
-        filter: brightness(0.7)
+        
     }
 }
 
@@ -47,6 +121,7 @@ img {
     padding: var(--padding-sec);
 
     .text {
+        letter-spacing: 1px;
         h3 {
             color: var(--black-01);
             font-size: 4rem;
@@ -60,9 +135,10 @@ img {
         }
 
         input {
+            background: transparent;
             border: none;
             outline: none;
-            border-bottom: 3px solid var(--black-01);
+            border-bottom: 3px solid var(--Black-02);
             width: 80%;
             padding: 1.3rem;
             font-size: 2rem;
@@ -94,7 +170,7 @@ img {
             padding: 10px 20px;
             width: 14.5rem;
             border-radius: 30px 30px 0 30px;
-            background: var(--sub-Color4);
+            background: var(--sub-Color4-purple);
             position: absolute;
             top: 7.55%;
             left: 20.53%;
@@ -239,7 +315,7 @@ img {
             padding: 10px 20px;
             width: 12.5rem;
             border-radius: 30px 30px 0 30px;
-            background: var(--black-02);
+            background: var(--Black-01);
             position: absolute;
             top: 0%;
             left: 71.6%;
@@ -383,32 +459,54 @@ img {
 // section04 섹션4
 .section04 {
      padding: var(--padding-sec);
-    .col-md-12{
+     .d-grid {
+        grid-template-columns:repeat(2, 1fr)
+     }
+    .title{
         text-align: center;
         margin-bottom: 100px;
         
         h3{
-            color: var(--black-01);
+            color: var(--Black-01);
             font-size: 6rem;    
             font-weight: 700;
         }
         p{
             color: var(--Grey-01);
-            font-size: 20px;
+            font-size: 2rem;
             font-weight: 700;
         }}
-        .col-md-6{
+        .card{
+            background: var(--White-01);
+            border-radius: 20px;
+            padding: 10px;
+            border: solid 1px var(--Stroke-color);
+            transition: all .5s;
+            &:hover {
+            border: solid 1px var(--sub-Color3-blue);
+            }
+            .img-wrapper{
+                overflow: hidden;
+                border-radius: 20px;
+                img {
+                    transition: all .3s;   
+
+                    &:hover {
+                    transform: scale(1.05);
+                    }
+                }
+            }
             .text{
-                padding:20px 00px 20px 0px;
+                padding-top: 20px;
             }
             h4{
-            color: var(--black-01);
-            font-size: 26px;
+            color: var(--Black-01);
+            font-size: 2.6rem;
             font-weight: 700;
             }
             p{
                 color: var(--Grey-01);
-                font-size: 20px;
+                font-size: 2rem;
                 font-weight: 400;
             }
         }
@@ -417,46 +515,81 @@ img {
 // section05 섹션5
 .section05{
 padding: var(--padding-sec);
-    .col-md-12{
+     .d-grid {
+    grid-template-columns:repeat(2, 1fr)
+     }
+    .title{
         text-align: center;
         margin-bottom: 100px;
         
         h3{
-            color: var(--black-01);
+            color: var(--Black-01);
             font-size: 6rem;    
             font-weight: 700;
         }
         p{
             color: var(--Grey-01);
-            font-size: 20px;
+            font-size: 2rem;
             font-weight: 700;
         }}
-        .col-md-6{
-            .text{
-                padding:20px 00px 20px 0px;
-            }
-            h4{
-            color: var(--black-01);
-            font-size: 26px;
-            font-weight: 700;
-            }
-            p{
-                color: var(--Grey-01);
-                font-size: 20px;
-                font-weight: 400;
-            }
+    .card {
+        background: var(--White-01);
+        border-radius: 20px;
+        padding: 10px;
+        border: 1px solid var(--Stroke-color);
+        transition: all .5s;
+        &:hover {
+            border: 1px solid var(--sub-Color3-blue);
         }
+
+  .img-wrapper {
+    overflow: hidden;
+    border-radius: 20px;
+
+    img {
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .text {
+    padding-top: 20px;
+  }
+
+  h4 {
+    color: var(--Black-01);
+    font-size: 2.6rem;
+    font-weight: 700;
+  }
+
+  p {
+    color: var(--Grey-01);
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
+
 }
 
 //section06 섹션6
 .section06 {
   padding: var(--padding-sec);
-
-  .col-md-6 {
+    .d-grid {
+    grid-template-columns:repeat(2, 1fr)
+    }
+  .col-md-12 {
     padding: 10px 30px;
+    background: var(--White-01);
+    border-radius: 20px;
+    border: 1px solid var(--Stroke-color);
+    transition: all .5s;
+    &:hover {
+        border: 1px solid var(--sub-Color3-blue);
+    }
   }
-
-
   .title {
     justify-content: space-between;
     display: flex;
@@ -465,7 +598,7 @@ padding: var(--padding-sec);
 
     h3 {
       color: var(--Black-01);
-      font-size: 30px;
+      font-size: 3rem;
       font-weight: 700;
     }
   }
@@ -475,7 +608,7 @@ padding: var(--padding-sec);
     border: none;
     background: none;
     color: var(--black-01);
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 700;
       &:hover {
         
@@ -516,3 +649,19 @@ padding: var(--padding-sec);
 
 
 }
+
+@media (max-width :1280px ) {
+    .section01 .video-background video {
+        height: 60%;
+    }
+    .section01 .video-background .video-dim {
+    top: 190px;
+    height: 60%;
+    }
+}
+@media (max-width :768px ) {
+.section06 .notice .content {
+    justify-content: space-between;
+}
+}
+

@@ -15,6 +15,7 @@
   height: 60px;
   padding: 15px 30px;
   border-radius: 15px;
+  font-size: 2rem;
 }
 .section01 .recent-search {
   display: flex;
@@ -82,13 +83,28 @@
   border-radius: 20px;
   border: 1px solid var(--Grey-03);
   margin-bottom: 40px;
+  transition: all 0.4s;
+}
+.section01 .list:hover {
+  border: 1px solid var(--sub-Color3-blue);
 }
 .section01 .list .content {
   display: flex;
+  align-items: center;
 }
 .section01 .list .content .content_img {
   margin-right: 40px;
-  width: 180px;
+  width: 30%;
+  transition: all 0.3s ease;
+}
+.section01 .list .content .content_img:hover {
+  filter: brightness(40%);
+}
+.section01 .list .content .content_img img {
+  width: 100%;
+}
+.section01 .list .content .text-wrap {
+  width: 70%;
 }
 .section01 .list .content .text-wrap .title {
   display: flex;
@@ -108,9 +124,14 @@
 .section01 .list .content .text-wrap .info .locate {
   display: flex;
   margin-bottom: 10px;
+  align-items: center;
 }
 .section01 .list .content .text-wrap .info .locate .icon {
   width: 24px;
+}
+.section01 .list .content .text-wrap .info p {
+  color: var(--Grey-01);
+  font-weight: 500;
 }
 .section01 .list a {
   color: var(--sub-Color4);
@@ -135,6 +156,10 @@
   background: var(--White-01);
   display: flex;
   flex-direction: column;
+  transition: all 0.5s;
+}
+.grid-container .box:hover {
+  border: 1px solid var(--sub-Color3-blue);
 }
 .grid-container .box .icon {
   width: 40px;
@@ -279,6 +304,20 @@
 }
 
 @media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .section01 .recent-search .tag-wrap .tag {
+    padding: 5px 6px;
+  }
+  .section01 .list-wrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .section01 .list .content .content_img {
+    margin-right: 20px;
+    column-gap: 30px;
+  }
   .modal__content {
     width: 95%;
     padding: 15px;
@@ -287,8 +326,14 @@
     height: 200px;
   }
 }
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 480px) {
+  .section01 .list .content .content_img {
+    margin-right: 10px;
+  }
+  .section01 .recent-search .tag-wrap .tag {
+    padding: 5px 3px;
+  }
+  .section01 .list {
+    margin-bottom: 20px;
   }
 }/*# sourceMappingURL=market.css.map */

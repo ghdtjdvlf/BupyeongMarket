@@ -22,6 +22,7 @@
       height: 60px;
       padding: 15px 30px;
        border-radius: 15px;
+       font-size: 2rem;
     }   
     }
 
@@ -101,13 +102,26 @@
       border-radius: 20px;
       border: 1px solid var(--Grey-03);
       margin-bottom: 40px;
+      transition: all .4s;
+      &:hover {
+       border: 1px solid var(--sub-Color3-blue);
+      }
       .content {
         display: flex;
+        align-items: center;
         .content_img {
           margin-right: 40px;
-          width: 180px;
+          width: 30%;
+          transition: all .3s ease;
+          &:hover {
+             filter: brightness(40%);
+          }  
+          img {
+            width: 100%;
+          }
         }
         .text-wrap {
+          width: 70%;
           .title {
             display: flex;
             align-items: center;
@@ -125,6 +139,7 @@
             .locate {
               display: flex;
               margin-bottom: 10px;
+              align-items: center;
               .icon{
                 width: 24px;
               }
@@ -133,19 +148,21 @@
              }
             }
             p {
-
+              color: var(--Grey-01);
+              font-weight: 500;
             }
           }
         }
       }
       a{
-        color: var(--sub-Color4);
+     color: var(--sub-Color4);
     padding: 10px 20px;
     font-size: 1.6rem;
     border: 1px solid var(--sub-Color4);
     align-self: center;
     border-radius: 30px;
     font-weight: 700;
+    
     }
   }
 
@@ -164,7 +181,10 @@
     background:  var(--White-01);
     display: flex;
     flex-direction: column;
-
+    transition: all .5s;
+    &:hover {
+    border: 1px solid var(--sub-Color3-blue);      
+    }
     .icon {
       width: 40px;
       margin-bottom: 1rem;
@@ -329,7 +349,28 @@
 
 }
 
+@media (max-width: 1280px) {
+
+}
+
 @media (max-width: 768px) {
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .section01 .recent-search .tag-wrap .tag {
+        padding: 5px 6px;
+  }
+
+  .section01 .list-wrap {
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .section01 .list .content .content_img {
+        margin-right: 20px;
+        column-gap: 30px;
+  }
   .modal {
     &__content {
       width: 95%;
@@ -343,9 +384,16 @@
 }
 
 
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 480px) {
+  .section01 .list .content .content_img {
+        margin-right: 10px;      
+  }
+    .section01 .recent-search .tag-wrap .tag {
+        padding: 5px 3px;
+  }
+
+  .section01 .list {
+    margin-bottom: 20px;
   }
 }
 
