@@ -51,7 +51,7 @@
 <body class="loading">
 
     <div id="loadingScreen">
-        <video id="loadingVideo" autoplay muted playsinline>
+        <video id="loadingVideo"  playsinline webkit-playsinline muted>
             <source src="assets/videos/부평로고영상.mp4" type="video/mp4" />
             비디오를 지원하지 않는 브라우저입니다.
         </video>
@@ -72,7 +72,7 @@
             <!-- gnb menu -->
             <header>
                 <div class="logo">
-                    <img src="assets/images/icon/main_logo.png" alt="">
+                    <a href="#"><img src="assets/images/icon/main_logo.png" alt=""></a>
                 </div>
                 <div class="gnb">
                     <ul>
@@ -581,6 +581,8 @@
                 setTimeout(hideLoadingScreen, 3000);
             });
         }; 
+
+        
 
         const section02 = document.querySelector(".section02");
         const section03 = document.querySelector(".section03");
