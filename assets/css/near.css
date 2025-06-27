@@ -86,10 +86,14 @@
 .attraction-info p {
   color: var(--Grey-01);
   margin-bottom: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .attraction-details {
   margin-top: 34px;
+}
+.attraction-details span {
+  font-size: 1.4rem;
 }
 
 .detail-item {
@@ -102,6 +106,7 @@
 }
 .detail-item a {
   color: var(--Grey-01);
+  font-size: 1.4rem;
 }
 
 .detail-item a:hover {
