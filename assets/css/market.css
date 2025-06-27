@@ -1,15 +1,4 @@
 @import url("/assets/css/common.css");
-.maintop {
-  padding: var(--padding-sec);
-}
-.maintop .mainlogo_img {
-  margin: 0 auto;
-  width: 30%;
-}
-.maintop .mainlogo_img img {
-  width: 100%;
-}
-
 .section01 .search-input-wrapper input {
   width: 100%;
   height: 60px;

@@ -3,159 +3,489 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hover Effect</title>
-    <!-- Bootstrap CSS (예시) -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>주변 관광지 소개 - 스크롤 애니메이션</title>
     <style>
-        /* 여기에 아래 CSS 코드를 추가합니다 */
-        body {
-            background-color: #f8f9fa;
-            padding: 50px;
-        }
-
-        .row {
-            display: flex; /* Flexbox 사용하여 간격 조절 */
-            justify-content: center; /* 가운데 정렬 */
-            gap: 20px; /* 아이템 간 간격 */
-        }
-
-        .col-md-3 {
-            /* Bootstrap 기본 패딩 제거 또는 조정 */
+        /* 기본 스타일 초기화 */
+        * {
+            margin: 0;
             padding: 0;
-            margin-bottom: 20px; /* 아래쪽 여백 */
-            flex-basis: calc(25% - 15px); /* 4개 항목이 나란히 오도록 너비 조정 (간격 고려) */
-            max-width: calc(25% - 15px);
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
         }
-
-        .item-card {
-            position: relative; /* 자식 요소인 오버레이를 absolute로 위치시키기 위함 */
-            overflow: hidden; /* 오버레이가 넘치지 않게 */
-            cursor: pointer;
-            border-radius: 8px; /* 모서리 둥글게 */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 그림자 효과 */
-            transition: box-shadow 0.3s ease; /* 그림자 애니메이션 */
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
         }
-
-        .item-card:hover {
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-
-        .item-card a {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            position: relative; /* 오버레이를 위한 relative */
-        }
-
-        .item-card img {
+        
+        /* 배너 이미지 스타일 */
+        .banner {
             width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease; /* 호버 시 이미지 확대 애니메이션 */
+            height: 300px;
+            overflow: hidden;
+            position: relative;
         }
-
-        /* 오버레이 스타일 */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
+        
+        .banner img {
             width: 100%;
             height: 100%;
-            background-color: rgba(128, 0, 128, 0.7); /* 보라색 (purple) 70% 투명도 */
-            display: flex;
-            justify-content: center; /* 텍스트 수평 중앙 정렬 */
-            align-items: center; /* 텍스트 수직 중앙 정렬 */
-            opacity: 0; /* 초기에는 숨김 */
-            visibility: hidden; /* 접근성 고려 */
-            transition: opacity 0.3s ease, visibility 0.3s ease; /* 부드러운 전환 효과 */
-            border-radius: 8px; /* 부모와 동일하게 */
+            object-fit: cover;
         }
-
-        .overlay-text {
-            color: white;
-            font-size: 1.5rem; /* 글자 크기 */
-            font-weight: bold;
+        
+        /* 타이틀 스타일 */
+        .title-section {
             text-align: center;
-            padding: 10px;
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+        
+        .title-section h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .title-section h1:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: #3498db;
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .title-section p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
+        /* 관광지 리스트 스타일 */
+        .attraction-list {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
+            gap: 30px;
+        }
+        
+        .attraction-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            display: flex;
+            position: relative; /* 바로가기 버튼 위치 지정을 위해 추가 */
+        }
+        
+        .attraction-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .attraction-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .attraction-image {
+            width: 30%;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .attraction-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .attraction-card:hover .attraction-image img {
+            transform: scale(1.05);
+        }
+        
+        .attraction-info {
+            padding: 25px;
+            flex: 1;
+            position: relative;
+        }
+        
+        .attraction-info h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .attraction-info p {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+        
+        .attraction-details {
+            margin-top: 20px;
+        }
+        
+        .detail-item {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: flex-start;
+        }
+        
+        .detail-item i {
+            color: #3498db;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .detail-item a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .detail-item a:hover {
+            color: #2980b9;
+            text-decoration: underline;
         }
 
-        /* 호버 시 효과 */
-        .item-card a:hover .overlay {
-            opacity: 1; /* 보이게 함 */
-            visibility: visible; /* 보이게 함 */
+        /* 바로가기 버튼 스타일 - 세로 가운데 정렬 */
+        .go-to-button {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1;
         }
 
-        .item-card a:hover img {
-            transform: scale(1.05); /* 이미지를 약간 확대 */
+        .go-to-button i {
+            margin-left: 5px;
         }
 
-        /* 반응형 디자인 (Bootstrap col-md-3 동작 유지) */
+        .go-to-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-50%) translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        /* 반응형 디자인 */
         @media (max-width: 768px) {
-            .col-md-3 {
-                flex-basis: calc(50% - 15px); /* 모바일에서는 2개씩 */
-                max-width: calc(50% - 15px);
+            .banner {
+                height: 200px;
             }
-        }
-        @media (max-width: 576px) {
-            .col-md-3 {
-                flex-basis: calc(100% - 15px); /* 더 작은 화면에서는 1개씩 */
-                max-width: calc(100% - 15px);
+            
+            .title-section h1 {
+                font-size: 2rem;
             }
-        }
+            
+            .attraction-list {
+                grid-template-columns: 1fr;
+            }
 
+            .go-to-button {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .banner {
+                height: 150px;
+            }
+            
+            .title-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .attraction-info {
+                padding: 15px;
+            }
+
+            .attraction-card {
+                flex-direction: column;
+            }
+
+            .attraction-image {
+                width: 100%;
+                height: 150px;
+            }
+
+            .go-to-button {
+                position: static;
+                transform: none;
+                margin-top: 15px;
+                align-self: flex-end;
+            }
+
+            .go-to-button:hover {
+                transform: translateX(5px);
+            }
+        }
     </style>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!--  -->
 </head>
 <body>
+    <!-- 배너 이미지 -->
+    <section class="banner">
+        <img src="https://via.placeholder.com/1200x300" alt="주변 관광지 배너 이미지">
+    </section>
+    
+    <!-- 타이틀 섹션 -->
+    <section class="title-section">
+        <h1>주변 관광지 소개</h1>
+        <p>여행을 더욱 특별하게 만들어줄 주변 관광지를 소개합니다</p>
+    </section>
+    
+    <!-- 관광지 리스트 -->
+    <section class="attraction-list">
+        <!-- 관광지 카드 1 -->
+        <div class="attraction-card">
+            <div class="attraction-image">
+                <img src="https://via.placeholder.com/400x200" alt="관광지 이미지">
+            </div>
+            <div class="attraction-info">
+                <h2>한강 공원</h2>
+                <p>서울의 중심을 흐르는 한강을 따라 조성된 공원으로, 다양한 레저 활동과 휴식 공간을 제공합니다. 특히 야경이 아름다워 많은 관광객이 찾는 명소입니다.</p>
+                <div class="attraction-details">
+                    <div class="detail-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="http://hangang.seoul.go.kr" target="_blank">http://hangang.seoul.go.kr</a>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <span>02-120</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>서울특별시 영등포구 여의동로 330</span>
+                    </div>
+                </div>
+                <button class="go-to-button" onclick="window.open('http://hangang.seoul.go.kr', '_blank')">
+                    바로가기 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 관광지 카드 2 -->
+        <div class="attraction-card">
+            <div class="attraction-image">
+                <img src="https://via.placeholder.com/400x200" alt="관광지 이미지">
+            </div>
+            <div class="attraction-info">
+                <h2>남산 타워</h2>
+                <p>서울의 전경을 한눈에 볼 수 있는 남산 타워는 서울의 대표적인 랜드마크입니다. 전망대, 레스토랑, 다양한 문화 시설이 있어 가족, 연인과 함께 방문하기 좋은 장소입니다.</p>
+                <div class="attraction-details">
+                    <div class="detail-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="http://www.nseoultower.co.kr" target="_blank">http://www.nseoultower.co.kr</a>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <span>02-3455-9277</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>서울특별시 용산구 남산공원길 105</span>
+                    </div>
+                </div>
+                <button class="go-to-button" onclick="window.open('http://www.nseoultower.co.kr', '_blank')">
+                    바로가기 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 관광지 카드 3 -->
+        <div class="attraction-card">
+            <div class="attraction-image">
+                <img src="https://via.placeholder.com/400x200" alt="관광지 이미지">
+            </div>
+            <div class="attraction-info">
+                <h2>경복궁</h2>
+                <p>조선 시대의 정궁으로 한국의 대표적인 고궁입니다. 광화문에서 근정전까지 이어지는 웅장한 건축물과 아름다운 정원이 특징이며, 수문장 교대식 등 다양한 문화 행사가 열립니다.</p>
+                <div class="attraction-details">
+                    <div class="detail-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="http://www.royalpalace.go.kr" target="_blank">http://www.royalpalace.go.kr</a>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <span>02-3700-3900</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>서울특별시 종로구 사직로 161</span>
+                    </div>
+                </div>
+                <button class="go-to-button" onclick="window.open('http://www.royalpalace.go.kr', '_blank')">
+                    바로가기 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="attraction-card">
+            <div class="attraction-image">
+                <img src="https://via.placeholder.com/400x200" alt="관광지 이미지">
+            </div>
+            <div class="attraction-info">
+                <h2>경복궁</h2>
+                <p>조선 시대의 정궁으로 한국의 대표적인 고궁입니다. 광화문에서 근정전까지 이어지는 웅장한 건축물과 아름다운 정원이 특징이며, 수문장 교대식 등 다양한 문화 행사가 열립니다.</p>
+                <div class="attraction-details">
+                    <div class="detail-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="http://www.royalpalace.go.kr" target="_blank">http://www.royalpalace.go.kr</a>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <span>02-3700-3900</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>서울특별시 종로구 사직로 161</span>
+                    </div>
+                </div>
+                <button class="go-to-button" onclick="window.open('http://www.royalpalace.go.kr', '_blank')">
+                    바로가기 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="attraction-card">
+            <div class="attraction-image">
+                <img src="https://via.placeholder.com/400x200" alt="관광지 이미지">
+            </div>
+            <div class="attraction-info">
+                <h2>경복궁</h2>
+                <p>조선 시대의 정궁으로 한국의 대표적인 고궁입니다. 광화문에서 근정전까지 이어지는 웅장한 건축물과 아름다운 정원이 특징이며, 수문장 교대식 등 다양한 문화 행사가 열립니다.</p>
+                <div class="attraction-details">
+                    <div class="detail-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="http://www.royalpalace.go.kr" target="_blank">http://www.royalpalace.go.kr</a>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <span>02-3700-3900</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>서울특별시 종로구 사직로 161</span>
+                    </div>
+                </div>
+                <button class="go-to-button" onclick="window.open('http://www.royalpalace.go.kr', '_blank')">
+                    바로가기 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="attraction-card">
+            <div class="attraction-image">
+                <img src="https://via.placeholder.com/400x200" alt="관광지 이미지">
+            </div>
+            <div class="attraction-info">
+                <h2>경복궁</h2>
+                <p>조선 시대의 정궁으로 한국의 대표적인 고궁입니다. 광화문에서 근정전까지 이어지는 웅장한 건축물과 아름다운 정원이 특징이며, 수문장 교대식 등 다양한 문화 행사가 열립니다.</p>
+                <div class="attraction-details">
+                    <div class="detail-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="http://www.royalpalace.go.kr" target="_blank">http://www.royalpalace.go.kr</a>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <span>02-3700-3900</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>서울특별시 종로구 사직로 161</span>
+                    </div>
+                </div>
+                <button class="go-to-button" onclick="window.open('http://www.royalpalace.go.kr', '_blank')">
+                    바로가기 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="attraction-card">
+            <div class="attraction-image">
+                <img src="https://via.placeholder.com/400x200" alt="관광지 이미지">
+            </div>
+            <div class="attraction-info">
+                <h2>경복궁</h2>
+                <p>조선 시대의 정궁으로 한국의 대표적인 고궁입니다. 광화문에서 근정전까지 이어지는 웅장한 건축물과 아름다운 정원이 특징이며, 수문장 교대식 등 다양한 문화 행사가 열립니다.</p>
+                <div class="attraction-details">
+                    <div class="detail-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="http://www.royalpalace.go.kr" target="_blank">http://www.royalpalace.go.kr</a>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <span>02-3700-3900</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>서울특별시 종로구 사직로 161</span>
+                    </div>
+                </div>
+                <button class="go-to-button" onclick="window.open('http://www.royalpalace.go.kr', '_blank')">
+                    바로가기 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="item-card">
-                <a href="assets/pages/market.html">
-                    <img src="https://via.placeholder.com/300x200/0000FF/FFFFFF?text=Item+01" alt="마켓 페이지 1">
-                    <div class="overlay">
-                        <p class="overlay-text">Item 01 설명</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="item-card">
-                <a href="assets/pages/market.html">
-                    <img src="https://via.placeholder.com/300x200/00FF00/FFFFFF?text=Item+02" alt="마켓 페이지 2">
-                    <div class="overlay">
-                        <p class="overlay-text">Item 02 설명</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="item-card">
-                <a href="assets/pages/market.html">
-                    <img src="https://via.placeholder.com/300x200/FF0000/FFFFFF?text=Item+03" alt="마켓 페이지 3">
-                    <div class="overlay">
-                        <p class="overlay-text">Item 03 설명</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="item-card">
-                <a href="assets/pages/market.html">
-                    <img src="https://via.placeholder.com/300x200/FFFF00/000000?text=Item+04" alt="마켓 페이지 4">
-                    <div class="overlay">
-                        <p class="overlay-text">Item 04 설명</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+    <script>
+        // Intersection Observer 설정
+        const observerOptions = {
+            threshold: 0.1, // 10% 이상 보일 때 콜백 실행
+        };
 
-<!-- Bootstrap JS (선택 사항, 레이아웃에 필요 없음) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        // 관광지 카드 애니메이션
+        const attractionCards = document.querySelectorAll('.attraction-card');
+        
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        };
 
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // 각 카드에 observer 적용
+        attractionCards.forEach(card => {
+            observer.observe(card);
+        });
+
+        // 페이지 로드 시 첫 번째 카드가 화면 안에 있으면 바로 보이게 처리
+        window.addEventListener('load', () => {
+            const firstCard = attractionCards[0];
+            const firstCardRect = firstCard.getBoundingClientRect();
+            
+            if (firstCardRect.top < window.innerHeight && firstCardRect.bottom > 0) {
+                firstCard.classList.add('show');
+            }
+        });
+    </script>
 </body>
 </html>
