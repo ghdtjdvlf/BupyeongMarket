@@ -135,7 +135,8 @@ header {
   display: flex;
   justify-content: center;
   gap: 20px;
-  transition: all .4s;
+  transition: all .4s ; 
+  border-bottom: solid 1px var(--Grey-03);
 }
 
 header.on {
@@ -368,6 +369,40 @@ header .gnb {
   width: 100%;
 }
 
+/* 페이지네이션 */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.pagination a {
+  color: #333;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  font-size: 1.6rem;
+}
+
+.pagination a.active {
+  background-color: var(--Black-02);
+  color: white;
+  border: 1px solid var(--Grey-01) ;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #f1f1f1;
+}
+
+.pagination a.prev, .pagination a.next {
+  font-weight: bold;
+}
+
 
 /* 푸터 */
 .footer {
@@ -490,6 +525,10 @@ header .gnb {
   html {
     font-size: 8px;
   }
+  
+  .maintop .mainlogo_img {
+    width: 50%;
+  }
 
   header {
     padding: 0 40px;
@@ -571,6 +610,21 @@ header .gnb {
   :root {
   --padding-sec: 40px 0;
 }
+ header .logo {
+  width: 140px;
+ }
+ .menu-toggle {
+    width: 25px;
+    height: 19px;
+ }
+ 
+  .maintop {
+    padding: 120px 0 80px 0;
+  }
+
+  .maintop .mainlogo_img {
+    width: 70%;
+  }
 
   html {
     font-size: 6px;

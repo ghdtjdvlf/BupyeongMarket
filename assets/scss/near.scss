@@ -36,13 +36,15 @@
         background-color: #fff;
         border-radius: 10px;
         overflow: hidden;
+        border: 1px solid var(--Stroke-color);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         transition: all 0.5s ease;
         opacity: 0;
         transform: translateY(50px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
+        transition: all .5s ;
         display: flex;
         position: relative; /* 바로가기 버튼 위치 지정을 위해 추가 */
+
     }
     .attraction_div .attraction-card+.attraction-card{
     margin: 40px 0;
@@ -66,14 +68,10 @@
 }
     .attraction-card:hover {
             transform: translateY(-10px) !important;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--sub-Color3-blue);
         }        
         
-        .attraction-image 
         
-        .attraction-card:hover .attraction-image img {
-            transform: scale(1.05);
-        }
         
         .attraction-info {
             padding: 25px;
@@ -152,6 +150,10 @@
         
         /* 반응형 디자인 */
         @media (max-width: 768px) {
+            .section02 .attraction-image {
+                width: 30%;
+            }
+            
             .banner {
                 height: 200px;
             }
@@ -166,21 +168,30 @@
 
             .go-to-button {
                 padding: 8px 15px;
-                font-size: 0.8rem;
+                font-size: 1.2rem;
             }
         }
         
         @media (max-width: 480px) {
+            .section02 .attraction-image {
+                width: 100%;
+            }
+            .section02 .attraction-card.show {
+               padding: 20px 20px;
+            }
+            .attraction-details {
+                margin-top: 10px;
+            }
+            .attraction-info {
+                padding: 10px 0 0 0 ;
+            }
+
             .banner {
                 height: 150px;
             }
             
             .title-section h1 {
                 font-size: 1.8rem;
-            }
-            
-            .attraction-info {
-                padding: 15px;
             }
 
             .attraction-card {

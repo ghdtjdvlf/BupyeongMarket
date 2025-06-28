@@ -1,7 +1,5 @@
 @import url("/assets/css/common.css");
 
-
-
 /* section*/
 
 .event_detail {
@@ -10,7 +8,6 @@
   align-items: center;
   margin-bottom: 100px;
   .detail_box{
-    width: 856px;
     align-items: center;
   }
   img{
@@ -25,25 +22,23 @@
     text-align: center;
   }
   .top-title h2{
-    font-size: 40px;
+    font-size: 4rem; /* 40px = 4rem */
     font-weight: bold;
   }
   .bottom_title span{
-    font-size: 18px;
+    font-size: 1.8rem; /* 18px = 1.8rem */
     font-weight: bold;
     margin-bottom: 28px;
   }
   .bottom_title .h4{
-    font-size: 18px;
+    font-size: 1.8rem; /* 18px = 1.8rem */
     color: #54575D;
   }
   p{
     margin-top: 45px;
-    font-size: 18px;
+    font-size: 1.8rem; /* 18px = 1.8rem */
   }
 }
-
-
 
 .event_detail_two {
   display: flex;
@@ -51,7 +46,6 @@
   align-items: center;
   margin-bottom: 100px;
   .detail_box{
-    width: 846px;
     align-items: center;
   }
   img{
@@ -67,19 +61,18 @@
     text-align: left;
   }
   .top-title h2{
-    font-size: 40px;
+    font-size: 4rem; /* 40px = 4rem */
     font-weight: bold;
   }
   .bottom_title .h4{
-    font-size: 18px;
+    font-size: 1.8rem; /* 18px = 1.8rem */
     color: #54575D;
   }
   p{
-    font-size: 18px;
+    font-size: 1.8rem; /* 18px = 1.8rem */
     margin-bottom: 45px;
   }
 }
-
 
 .event_detail_three {
   display: flex;
@@ -87,7 +80,6 @@
   align-items: center;
   margin-bottom: 100px;
   .detail_box{
-    width: 846px;
     align-items: center;
   }
   img{
@@ -103,15 +95,15 @@
     text-align: left;
   }
   .top-title h2{
-    font-size: 40px;
+    font-size: 4rem; /* 40px = 4rem */
     font-weight: bold;
   }
   .bottom_title .h4{
-    font-size: 18px;
+    font-size: 1.8rem; /* 18px = 1.8rem */
     color: #54575D;
   }
   p{
-    font-size: 18px;
+    font-size: 1.8rem; /* 18px = 1.8rem */
     margin-bottom: 45px;
   }
 }
@@ -121,7 +113,6 @@
   justify-content: center;
   align-items: center;
   .detail_box{
-    width: 846px;
     align-items: center;
   }
   img{
@@ -137,14 +128,11 @@
     text-align: left;
   }
   .top-title h2{
-    font-size: 40px;
+    font-size: 4rem; /* 40px = 4rem */
     font-weight: bold;
   }
   p{
-    font-size: 18px;
+    font-size: 1.8rem; /* 18px = 1.8rem */
     margin-bottom: 45px;
   }
 }
-
-
-

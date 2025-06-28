@@ -2,7 +2,6 @@
 
 .notice-container {
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   background: white;
   border-radius: 8px;
@@ -49,14 +48,17 @@
       display: flex;
       align-items: center;
       padding: 16px 12px;
-      border-bottom: 1px solid #f0f0f0;
-      transition: background-color 0.2s;
-      cursor: pointer;
-
+      border-bottom: 1px solid var(--Stroke-color);
+      justify-content: space-between;
       &:hover {
-        background-color: #f9f9f9;
+        background-color: var(--Stroke-color);
       }
-
+      .item-info{
+        margin-right: 30px;
+        span {
+          margin: 0 15px;
+        }
+      }
       .category {
         padding: 4px 8px;
         border-radius: 4px;
@@ -92,7 +94,7 @@
 
       .title {
         flex: 1;
-        font-size: 15px;
+        font-size: 1.5rem;
         color: #333;
         padding-right: 10px;
 
@@ -160,5 +162,50 @@
     font-size: 14px;
     margin: 10px 20px 0;
   }
+}
+
+@media (max-width : 1280px ) {
+  
+}
+
+
+@media (max-width : 768px ) {
+
+}
+
+
+@media (max-width : 480px ) {
+
+  .notice-container .notice-header .tab-button {
+    padding: 12px 15px;
+    font-size: 12px;
+    position: relative;
+  }
+  
+.notice-container .notice-list .list-item {
+  padding: 10px 5px;
+  align-items: stretch;
+}
+.notice-container .notice-list .list-item .title {
+  font-size: 12px;
+}
+.notice-container .notice-list .list-item {
+  flex-direction: column;
+}
+.notice-container .notice-list .list-item .date, .notice-container .notice-list .list-item .views {
+  width: 40px;
+  font-size: 10px;
+}
+.notice-container .notice-list .list-item .item-info span {
+  margin: 0 10px;
+}
+
+
+ .item-info{
+  margin-top: 7px;
+  display: flex;
+  justify-content: flex-end;
+ }
+
 }
 

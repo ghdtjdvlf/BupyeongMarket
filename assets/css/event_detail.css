@@ -7,7 +7,6 @@
   margin-bottom: 100px;
 }
 .event_detail .detail_box {
-  width: 856px;
   align-items: center;
 }
 .event_detail img {
@@ -22,21 +21,21 @@
   text-align: center;
 }
 .event_detail .top-title h2 {
-  font-size: 40px;
+  font-size: 4rem; /* 40px = 4rem */
   font-weight: bold;
 }
 .event_detail .bottom_title span {
-  font-size: 18px;
+  font-size: 1.8rem; /* 18px = 1.8rem */
   font-weight: bold;
   margin-bottom: 28px;
 }
 .event_detail .bottom_title .h4 {
-  font-size: 18px;
+  font-size: 1.8rem; /* 18px = 1.8rem */
   color: #54575D;
 }
 .event_detail p {
   margin-top: 45px;
-  font-size: 18px;
+  font-size: 1.8rem; /* 18px = 1.8rem */
 }
 
 .event_detail_two {
@@ -46,7 +45,6 @@
   margin-bottom: 100px;
 }
 .event_detail_two .detail_box {
-  width: 846px;
   align-items: center;
 }
 .event_detail_two img {
@@ -62,15 +60,15 @@
   text-align: left;
 }
 .event_detail_two .top-title h2 {
-  font-size: 40px;
+  font-size: 4rem; /* 40px = 4rem */
   font-weight: bold;
 }
 .event_detail_two .bottom_title .h4 {
-  font-size: 18px;
+  font-size: 1.8rem; /* 18px = 1.8rem */
   color: #54575D;
 }
 .event_detail_two p {
-  font-size: 18px;
+  font-size: 1.8rem; /* 18px = 1.8rem */
   margin-bottom: 45px;
 }
 
@@ -81,7 +79,6 @@
   margin-bottom: 100px;
 }
 .event_detail_three .detail_box {
-  width: 846px;
   align-items: center;
 }
 .event_detail_three img {
@@ -97,15 +94,15 @@
   text-align: left;
 }
 .event_detail_three .top-title h2 {
-  font-size: 40px;
+  font-size: 4rem; /* 40px = 4rem */
   font-weight: bold;
 }
 .event_detail_three .bottom_title .h4 {
-  font-size: 18px;
+  font-size: 1.8rem; /* 18px = 1.8rem */
   color: #54575D;
 }
 .event_detail_three p {
-  font-size: 18px;
+  font-size: 1.8rem; /* 18px = 1.8rem */
   margin-bottom: 45px;
 }
 
@@ -115,7 +112,6 @@
   align-items: center;
 }
 .event_detail_four .detail_box {
-  width: 846px;
   align-items: center;
 }
 .event_detail_four img {
@@ -131,10 +127,10 @@
   text-align: left;
 }
 .event_detail_four .top-title h2 {
-  font-size: 40px;
+  font-size: 4rem; /* 40px = 4rem */
   font-weight: bold;
 }
 .event_detail_four p {
-  font-size: 18px;
+  font-size: 1.8rem; /* 18px = 1.8rem */
   margin-bottom: 45px;
 }/*# sourceMappingURL=event_detail.css.map */

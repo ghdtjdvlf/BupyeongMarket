@@ -650,6 +650,10 @@ body.loading {
 .section06 button:hover {
   text-decoration: underline;
 }
+.section06 button #map {
+  width: 400px;
+  height: 200px;
+}
 .section06 .notice .content {
   color: var(--Grey-01);
   display: flex;
