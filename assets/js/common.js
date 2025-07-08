@@ -76,7 +76,7 @@ const ballAnimation = gsap.timeline({
     start: "top top",
     end: "bottom bottom",
     scrub: 15,
-    markers: true // 위치 확인용 (배포시 false로 변경)
+    markers: false // 위치 확인용 (배포시 false로 변경)
   }
 });
 ballAnimation.to(".big-ball-1", {
@@ -101,7 +101,7 @@ const ballAnimation2 = gsap.timeline({
     start: "top top",
     end: "bottom bottom", // ballAnimation1과 동일한 스크롤 범위 사용
     scrub: 10,
-    markers: true,
+    markers: false,
   }
 });
 
@@ -126,7 +126,7 @@ const ballAnimation3 = gsap.timeline({
     start: "top top",
     end: "bottom bottom", // ballAnimation1과 동일한 스크롤 범위 사용
     scrub: 10,
-    markers: true,
+    markers: false,
   }
 });
 
@@ -151,7 +151,7 @@ const ballAnimation4 = gsap.timeline({
     start: "top top",
     end: "bottom bottom", // ballAnimation1과 동일한 스크롤 범위 사용
     scrub: 10,
-    markers: true,
+    markers: false,
   }
 });
 
@@ -176,7 +176,7 @@ const ballAnimation5 = gsap.timeline({
     start: "top top",
     end: "bottom bottom", // ballAnimation1과 동일한 스크롤 범위 사용
     scrub: 10,
-    markers: true,
+    markers: false,
   }
 });
 
