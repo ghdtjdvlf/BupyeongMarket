@@ -1,16 +1,15 @@
-# BupyeongMarket
-# 📍부평종합시장 re-design README
+# 부평종합시장 re-design README
 
----
 
-![Uploading KakaoTalk_20250710_115206931.gif…]()
+![Image](https://github.com/user-attachments/assets/ae47b0d0-cc56-4604-afa1-90a8c2e2cdcf)
+
+
 
 
 - 배포 URL :https://bupyeongmarket.netlify.app/
 
 ## 프로젝트 소개
 
----
 
 **부평종합시장 웹사이트 리디자인 프로젝트**는 사용자 편의성과 시장 홍보 효과를 높이기 위해 진행된 웹 퍼블리싱 협업 프로젝트입니다.
 
@@ -21,11 +20,9 @@
 
 ## 팀원 구성
 
----
 
 ## 1. 개발 환경
 
----
 
 - Skills : HTML, SCSS, JavaScript, jQuery
 - 협업 툴 : Discord, Notion, Github
@@ -34,8 +31,7 @@
 
 ## 2. 프로젝트 구조
 
----
-
+```
 BupyeongMarket/
 ├── README.md/                        # 프로젝트 기획 및 참고 자료
 ├── index.html
@@ -85,14 +81,13 @@ BupyeongMarket/
 │   ├── near.html
 │   ├── notice.html
 │   └── notice_list.html
+```
 
 ## 3. 역할 분담
 
----
 
 ## 4. 개발 기간 및 작업 관리
 
----
 
 **개발 기간**
 
@@ -107,11 +102,11 @@ BupyeongMarket/
 
 ## 5. 신경 쓴 부분
 
----
+
 
 ## 6. 주요 기술 구현
 
----
+
 
 ### 1. 초기화면 구성 (Splash Screen)
 
@@ -134,10 +129,9 @@ text
 > 
 > 스타일: `assets/css/style.css`
 > 
-> ![KakaoTalk_20250710_115206931_01.gif](attachment:d69655f4-4433-42a1-a3ff-a42c35e4da9c:KakaoTalk_20250710_115206931_01.gif)
 > 
 
----
+
 
 ### 2. 반응형 웹 제작 (Responsive Web Design)
 
@@ -157,12 +151,12 @@ text
 > 
 > `assets/css/style.css`, `market.css`, `map.css`, 각종 `.scss`
 > 
-> ![KakaoTalk_20250710_115206931_03.gif](attachment:79e4be9b-8161-4d78-989a-11314f660caa:KakaoTalk_20250710_115206931_03.gif)
 > 
 > []()
 > 
 
----
+![Image](https://github.com/user-attachments/assets/726a2452-32f5-42b0-867d-65f07db8e0d3)
+
 
 ### 📌 3. Kakao 지도 API 활용 (Kakao Map Integration)
 
@@ -182,7 +176,8 @@ text
 > `assets/css/map.css`, `scss/map.scss`
 > 
 
----
+![Image](https://github.com/user-attachments/assets/48776fe2-c3a1-4b9d-a288-6d600e6f82ab)
+
 
 ### ✨ 기타 적용 사항 요약
 
