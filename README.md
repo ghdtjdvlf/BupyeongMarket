@@ -3,7 +3,8 @@
 
 ---
 
-![image.png](attachment:522927f8-1ff7-460f-bf3e-54003847e32f:image.png)
+![Uploading KakaoTalk_20250710_115206931.gif…]()
+
 
 - 배포 URL :https://bupyeongmarket.netlify.app/
 
